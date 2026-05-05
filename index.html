@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentation om Claude</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
+    <style>
+        .reveal h1, .reveal h2 { color: #54b689; }
+        .reveal p, .reveal li { font-size: 0.8em; text-align: left; }
+        .image-container { display: flex; justify-content: center; margin-top: 20px; }
+        img { border-radius: 8px; border: 2px solid #54b689; max-height: 400px; }
+        .price-table { width: 100%; border-collapse: collapse; font-size: 0.6em; }
+        .price-table th, .price-table td { border: 1px solid #54b689; padding: 10px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Slide 1: Introduktion -->
+            <section>
+                <h1>Claude.ai</h1>
+                <p>En kraftfull AI-assistent för text, kod och analys.</p>
+                <p style="font-size: 0.5em; color: gray;">Besök: <a href="https://claude.ai/new" style="color: #54b689;">claude.ai/new</a></p>
+            </section>
+
+            <!-- Slide 2: Användningsområden -->
+            <section>
+                <h2>Vad kan Claude göra?</h2>
+                <ul>
+                    <li>Text och skrivande</li>
+                    <li>Programmering (mitt val!)</li>
+                    <li>Analys och problemlösning</li>
+                    <li>Idéer och kreativitet</li>
+                    <li>Hantera stora dokument</li>
+                </ul>
+            </section>
+
+            <!-- Slide 3: För- och Nackdelar -->
+            <section>
+                <h2>Analys av verktyget</h2>
+                <div style="display: flex; gap: 20px;">
+                    <div style="flex: 1;">
+                        <h3 style="font-size: 0.8em; color: #54b689;">Fördelar</h3>
+                        <ul style="font-size: 0.6em;">
+                            <li>Snabbt</li>
+                            <li>Pedagogiskt</li>
+                            <li>Bra för nybörjare</li>
+                            <li>Perfekt för prototyper</li>
+                        </ul>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="font-size: 0.8em; color: #ff5f5f;">Nackdelar</h3>
+                        <ul style="font-size: 0.6em;">
+                            <li>Kan ge fel kod</li>
+                            <li>Minskar eget lärande</li>
+                            <li>Kräver kontroll</li>
+                            <li>Kräver förståelse</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Prisplaner -->
+            <section>
+                <h2>Versioner & Pris</h2>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Version</th>
+                            <th>Pris</th>
+                            <th>Funktion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gratis</td>
+                            <td>0 kr</td>
+                            <td>Begränsade prompts/tokens</td>
+                        </tr>
+                        <tr>
+                            <td>Pro</td>
+                            <td>15 Euro / mån</td>
+                            <td>Fler meddelanden, bättre access</td>
+                        </tr>
+                        <tr>
+                            <td>Max</td>
+                            <td>90 Euro / mån</td>
+                            <td>Högsta kapacitet för tunga uppgifter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Slide 5: Prompt 1 -->
+            <section>
+                <h2>Prompt 1: Slumpmässigt nummer</h2>
+                <p><i>"skapa en kod i python som tar ett slumpmässigt nummer mellan 1-3000. Tack."</i></p>
+                <div class="image-container">
+                    <img src="image_10f399.png" alt="Python kod resultat">
+                </div>
+                <p style="font-size: 0.5em; text-align: center;">Resultat: Funkade utmärkt i Google Colab!</p>
+            </section>
+
+            <!-- Slide 6: Prompt 2 -->
+            <section>
+                <h2>Prompt 2: Snake-spel</h2>
+                <p><i>"skapa ett snake spel i python, tack"</i></p>
+                <div class="image-container">
+                    <img src="image_10f35e.png" alt="Snake spel resultat">
+                </div>
+                <p style="font-size: 0.5em; text-align: center;">Resultat: Kodades rätt, men behövde konverteras i Replit för att köra Pygame.</p>
+            </section>
+
+            <!-- Slide 7: Sammanfattning -->
+            <section>
+                <h2>Slutsats</h2>
+                <p>Claude är ett fantastiskt verktyg om du vill få fram kod <strong>snabbt och enkelt</strong>.</p>
+                <p>Men kom ihåg: Man bör ha en grundläggande förståelse själv, då man får färdig kod utan djupa förklaringar!</p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            center: true,
+            transition: 'slide'
+        });
+    </script>
+</body>
+</html>
