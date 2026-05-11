@@ -1,136 +1,112 @@
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentation om Claude</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
-    <style>
-        .reveal h1, .reveal h2 { color: #54b689; }
-        .reveal p, .reveal li { font-size: 0.8em; text-align: left; }
-        .image-container { display: flex; justify-content: center; margin-top: 20px; }
-        img { border-radius: 8px; border: 2px solid #54b689; max-height: 400px; }
-        .price-table { width: 100%; border-collapse: collapse; font-size: 0.6em; }
-        .price-table th, .price-table td { border: 1px solid #54b689; padding: 10px; text-align: center; }
-    </style>
-</head>
-<body>
-    <div class="reveal">
-        <div class="slides">
-            
-            <!-- Slide 1: Introduktion -->
-            <section>
-                <h1>Claude.ai</h1>
-                <p>En kraftfull AI-assistent för text, kod och analys.</p>
-                <p style="font-size: 0.5em; color: gray;">Besök: <a href="https://claude.ai/new" style="color: #54b689;">claude.ai/new</a></p>
-            </section>
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
-            <!-- Slide 2: Användningsområden -->
-            <section>
-                <h2>Vad kan Claude göra?</h2>
-                <ul>
-                    <li>Text och skrivande</li>
-                    <li>Programmering (mitt val!)</li>
-                    <li>Analys och problemlösning</li>
-                    <li>Idéer och kreativitet</li>
-                    <li>Hantera stora dokument</li>
-                </ul>
-            </section>
+const slides = [
+  {
+    title: "Claude (AI-verktyg)",
+    content:
+      "Claude kan användas för text och skrivande, programmering, analys, problemlösning, idéer, kreativitet och dokumenthantering.",
+  },
+  {
+    title: "Varför jag använder Claude",
+    content:
+      "Jag har valt att använda Claude främst för att skapa kod snabbt och effektivt.",
+  },
+  {
+    title: "Fördelar",
+    content:
+      "Snabb, pedagogisk, bra för nybörjare och prototyper.",
+  },
+  {
+    title: "Nackdelar",
+    content:
+      "Kan ge fel kod, minskar inlärning om man bara kopierar, kräver kontroll och förståelse.",
+  },
+  {
+    title: "Viktigt att veta",
+    content:
+      "Claude ger ofta färdig kod utan förklaring. Du får koden och instruktioner för hur du använder den.",
+  },
+  {
+    title: "Priser",
+    content:
+      "Gratisversion med begränsade tokens. Pro: ca 15€/månad. Max: ca 90€/månad med bättre prestanda och fler funktioner.",
+  },
+  {
+    title: "Prompt 1",
+    content:
+      "Skapa en Python-kod som genererar ett slumpmässigt nummer mellan 1–3000.",
+  },
+  {
+    title: "Resultat (Prompt 1)",
+    content:
+      "Funkade bra när koden kördes i Google Colab.",
+  },
+  {
+    title: "Prompt 2",
+    content:
+      "Skapa ett Snake-spel i Python.",
+  },
+  {
+    title: "Resultat (Prompt 2)",
+    content:
+      "Koden fungerade, men krävde pygame. När jag körde i Replit behövdes viss anpassning.",
+    image: "/mnt/data/b9af095f-c4da-4150-878d-783d7243b963.png"
+  },
+];
 
-            <!-- Slide 3: För- och Nackdelar -->
-            <section>
-                <h2>Analys av verktyget</h2>
-                <div style="display: flex; gap: 20px;">
-                    <div style="flex: 1;">
-                        <h3 style="font-size: 0.8em; color: #54b689;">Fördelar</h3>
-                        <ul style="font-size: 0.6em;">
-                            <li>Snabbt</li>
-                            <li>Pedagogiskt</li>
-                            <li>Bra för nybörjare</li>
-                            <li>Perfekt för prototyper</li>
-                        </ul>
-                    </div>
-                    <div style="flex: 1;">
-                        <h3 style="font-size: 0.8em; color: #ff5f5f;">Nackdelar</h3>
-                        <ul style="font-size: 0.6em;">
-                            <li>Kan ge fel kod</li>
-                            <li>Minskar eget lärande</li>
-                            <li>Kräver kontroll</li>
-                            <li>Kräver förståelse</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+export default function Presentation() {
+  const [index, setIndex] = useState(0);
+  const slide = slides[index];
 
-            <!-- Slide 4: Prisplaner -->
-            <section>
-                <h2>Versioner & Pris</h2>
-                <table class="price-table">
-                    <thead>
-                        <tr>
-                            <th>Version</th>
-                            <th>Pris</th>
-                            <th>Funktion</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Gratis</td>
-                            <td>0 kr</td>
-                            <td>Begränsade prompts/tokens</td>
-                        </tr>
-                        <tr>
-                            <td>Pro</td>
-                            <td>15 Euro / mån</td>
-                            <td>Fler meddelanden, bättre access</td>
-                        </tr>
-                        <tr>
-                            <td>Max</td>
-                            <td>90 Euro / mån</td>
-                            <td>Högsta kapacitet för tunga uppgifter</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        className="w-full max-w-2xl"
+      >
+        <Card className="shadow-xl rounded-2xl">
+          <CardContent className="p-8">
+            <h1 className="text-2xl font-bold mb-4">{slide.title}</h1>
+            <p className="text-base whitespace-pre-line mb-4">
+              {slide.content}
+            </p>
 
-            <!-- Slide 5: Prompt 1 -->
-            <section>
-                <h2>Prompt 1: Slumpmässigt nummer</h2>
-                <p><i>"skapa en kod i python som tar ett slumpmässigt nummer mellan 1-3000. Tack."</i></p>
-                <div class="image-container">
-                    <img src="image_10f399.png" alt="Python kod resultat">
-                </div>
-                <p style="font-size: 0.5em; text-align: center;">Resultat: Funkade utmärkt i Google Colab!</p>
-            </section>
+            {slide.image && (
+              <img
+                src={slide.image}
+                alt="Snake spel resultat"
+                className="rounded-xl shadow-md w-full"
+              />
+            )}
+          </CardContent>
+        </Card>
+      </motion.div>
 
-            <!-- Slide 6: Prompt 2 -->
-            <section>
-                <h2>Prompt 2: Snake-spel</h2>
-                <p><i>"skapa ett snake spel i python, tack"</i></p>
-                <div class="image-container">
-                    <img src="image_10f35e.png" alt="Snake spel resultat">
-                </div>
-                <p style="font-size: 0.5em; text-align: center;">Resultat: Kodades rätt, men behövde konverteras i Replit för att köra Pygame.</p>
-            </section>
+      <div className="flex gap-4 mt-6">
+        <Button
+          onClick={() => setIndex((i) => Math.max(i - 1, 0))}
+          disabled={index === 0}
+        >
+          Bakåt
+        </Button>
+        <Button
+          onClick={() => setIndex((i) => Math.min(i + 1, slides.length - 1))}
+          disabled={index === slides.length - 1}
+        >
+          Nästa
+        </Button>
+      </div>
 
-            <!-- Slide 7: Sammanfattning -->
-            <section>
-                <h2>Slutsats</h2>
-                <p>Claude är ett fantastiskt verktyg om du vill få fram kod <strong>snabbt och enkelt</strong>.</p>
-                <p>Men kom ihåg: Man bör ha en grundläggande förståelse själv, då man får färdig kod utan djupa förklaringar!</p>
-            </section>
-
-        </div>
+      <p className="mt-4 text-sm text-gray-500">
+        Slide {index + 1} / {slides.length}
+      </p>
     </div>
+  );
+}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
-    <script>
-        Reveal.initialize({
-            hash: true,
-            center: true,
-            transition: 'slide'
-        });
-    </script>
-</body>
-</html>
